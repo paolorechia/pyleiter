@@ -2,10 +2,6 @@ import sys
 import subprocess
 
 
-def hello_world():
-    return "hello world"
-
-
 def run_process(command):
     print(f"Running process {command}...")
     with subprocess.Popen(command.split(" "), stdout=subprocess.PIPE) as process:

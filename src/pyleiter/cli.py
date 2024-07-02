@@ -1,9 +1,18 @@
+from pyleiter.runner import run_process
 import argparse
 
 
-def parse_args() -> argparse.ArgumentParser:
+def build_arg_parser() -> argparse.ArgumentParser:
     return argparse.ArgumentParser(
-        prog="ProgramName",
-        description="What the program does",
-        epilog="Text at the bottom of help",
+        prog="pyleiter",
+        description="Simple task management for a Python project",
+        epilog="Enjoy!",
     )
+
+
+def run_command(command: str):
+    return run_process(command)
+
+
+def hello_world():
+    return "hello world"
