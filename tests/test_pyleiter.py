@@ -12,6 +12,6 @@ def test_pyleiter():
 
 def test_pyleiter_help():
     help_msg = subprocess.run(
-            ["python", "-m", "pyleiter", "-h"], capture_output=True
-        ).stdout.decode()
+        ["python", "-m", "pyleiter", "-h"], capture_output=True
+    ).stdout.decode()
     assert "usage: " in help_msg
