@@ -22,12 +22,12 @@ def _parse_config_file(filepath):
         return toml.load(fd)
 
 
-def _get_pyleiter_config(config: dict):
+def _get_pyleiter_commands_config(config: dict):
     try:
-        return config["pyleiter"]
+        return config["tool"]["pyleiter"]["commands"]
     except KeyError as excp:
         raise PyleiterKeyNotFoundError(
-            "'pyleiter' key not found in 'pyproject.toml'. Please double check your configuration."
+            "'tool.pyleiter.commands' key not found in 'pyproject.toml'. Please double check your configuration."
         ) from excp
 
 
@@ -35,4 +35,4 @@ def read_pyleiter_config() -> dict:
     filepath = _find_pyproject_toml()
     logger.info("Using project file: '%s'", filepath)
     config_dict = _parse_config_file(filepath)
-    return _get_pyleiter_config(config_dict)
+    return _get_pyleiter_commands_config(config_dict)

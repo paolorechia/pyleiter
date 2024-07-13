@@ -14,7 +14,7 @@ pytest = "^8.2.2"
 tox = "^4.15.1"
 ruff = "^0.5.0"
 
-[pyleiter]
+[tool.pyleiter.commands]
 format = { command = "ruff format", help = "Applies ruff format to project"}
 lint = { command = "ruff check tests/conftest.py", help = "Runs project formatter and linter" }
 
