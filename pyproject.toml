@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pyleiter"
 version = "0.1.0"
-description = ""
+description = "Simple task manager"
 authors = ["Paolo Rechia <paolorechia@gmail.com>"]
 readme = "README.md"
 
@@ -13,6 +13,7 @@ toml = "^0.10.2"
 pytest = "^8.2.2"
 tox = "^4.15.1"
 ruff = "^0.5.0"
+twine = "^5.1.1"
 
 [build-system]
 requires = ["poetry-core"]
