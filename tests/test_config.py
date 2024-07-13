@@ -18,7 +18,7 @@ def test_pyleiter_extracts_correct_config(patch_config):
             "help": "Applies ruff format to project",
         },
         "lint": {
-            "command": "ruff check src && ruff check tests",
+            "command": "ruff check tests/conftest.py",
             "help": "Runs project formatter and linter",
         },
     }

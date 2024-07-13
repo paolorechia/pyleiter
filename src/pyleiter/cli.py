@@ -9,7 +9,13 @@ def _build_arg_parser(config: dict) -> argparse.ArgumentParser:
         description="Simple task management for a Python project",
         epilog="Enjoy!",
     )
-    arg_parser.add_argument("command", choices=list(config.keys()))
+    command_help = {}
+    for key, item in config.items():
+        command_help[key] = item.get("help", "Help not provided")
+
+    arg_parser.add_argument(
+        "command", choices=list(config.keys()), help=str(command_help)
+    )
     return arg_parser
 
 

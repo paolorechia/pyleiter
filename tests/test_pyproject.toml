@@ -16,7 +16,7 @@ ruff = "^0.5.0"
 
 [pyleiter]
 format = { command = "ruff format", help = "Applies ruff format to project"}
-lint = { command = "ruff check src && ruff check tests", help = "Runs project formatter and linter" }
+lint = { command = "ruff check tests/conftest.py", help = "Runs project formatter and linter" }
 
 [build-system]
 requires = ["poetry-core"]
