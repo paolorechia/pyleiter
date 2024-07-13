@@ -5,6 +5,7 @@ from pyleiter.cli import main
 
 def test_pyleiter(monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", ["pyleiter", "format"])
+    main()
     stdout = capsys.readouterr().out
     assert "files left unchanged" in stdout
 
