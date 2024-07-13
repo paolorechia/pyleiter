@@ -4,11 +4,13 @@ import argparse
 
 
 def _build_arg_parser(config) -> argparse.ArgumentParser:
-    return argparse.ArgumentParser(
+    arg_parser = argparse.ArgumentParser(
         prog="pyleiter",
         description="Simple task management for a Python project",
         epilog="Enjoy!",
     )
+    arg_parser.add_argument("command", choices=list(config.keys()))
+    return arg_parser
 
 
 def _check_args(args):
