@@ -15,7 +15,8 @@ tox = "^4.15.1"
 ruff = "^0.5.0"
 
 [pyleiter]
-lint = { command = "ruff format && ruff check src && ruff check tests", help = "Runs project formatter and linter" }
+format = { command = "ruff format", help = "Applies ruff format to project"}
+lint = { command = "ruff check src && ruff check tests", help = "Runs project formatter and linter" }
 
 [build-system]
 requires = ["poetry-core"]
