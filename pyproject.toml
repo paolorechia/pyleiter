@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyleiter"
-version = "0.1.0"
+version = "0.2.0"
 description = "Simple task manager"
 authors = ["Paolo Rechia <paolorechia@gmail.com>"]
 readme = "README.md"
