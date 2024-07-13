@@ -24,6 +24,7 @@ def test_pyleiter_extracts_correct_config(patch_config):
     }
 
 
+@pytest.mark.nopatch_config
 def test_pyleiter_complains_missing_config():
     with pytest.raises(PyleiterKeyNotFoundError):
         read_pyleiter_config()

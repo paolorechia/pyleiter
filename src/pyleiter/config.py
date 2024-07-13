@@ -11,12 +11,10 @@ logger = logging.getLogger(__name__)
 def _find_pyproject_toml():
     cwd = os.getcwd()
     cwd_files = os.listdir("./")
-    if "pyproject.toml" not in cwd_files:
-        return PyProjectTomlNotFoundError(
-            f"File 'pyproject.toml' not found in path {cwd}"
-        )
-    else:
-        return "pyproject.toml"
+    for f in cwd_files:
+        if "pyproject.toml" in f:
+            return f
+    return PyProjectTomlNotFoundError(f"File 'pyproject.toml' not found in path {cwd}")
 
 
 def _parse_config_file(filepath):
@@ -29,7 +27,7 @@ def _get_pyleiter_config(config: dict):
         return config["pyleiter"]
     except KeyError as excp:
         raise PyleiterKeyNotFoundError(
-            "'pyleiter' key not find in 'pyproject.toml'. Please double check your configuration."
+            "'pyleiter' key not found in 'pyproject.toml'. Please double check your configuration."
         ) from excp
 
 
