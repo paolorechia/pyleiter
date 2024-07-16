@@ -26,6 +26,22 @@ After that, you can use pyleiter with the registered commands:
 pyleiter format
 ```
 
+## Autocompletion Bash
+
+Add this to your favorite shell (only tested in bash) configuration file. For instance, in ~/.bashrc:
+```bash
+_pyleiter_completions()
+{
+  OPTIONS=$(pyleiter 2>&1 >/dev/null | grep -Po '{.*}' | tr -d '[{}]' | tr ',' ' ')
+  SUGGESTIONS=$(compgen -W "$OPTIONS" "${COMP_WORDS[1]}")
+  if [[ "$SUGGESTIONS" != "${COMP_WORDS[1]}" ]]; then
+      COMPREPLY=($(compgen -W "$OPTIONS" "${COMP_WORDS[1]}"))
+  fi
+}
+
+complete -F _pyleiter_completions pyleiter
+```
+
 ## Why use it?
 
 Simply because every project requires simple maintenance scripts, and it is often done without a standardized way for Python projects.
